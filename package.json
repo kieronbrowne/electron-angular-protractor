@@ -9,7 +9,6 @@
   },
   "main": "app/index.js",
   "devDependencies": {
-    "bower": "^1.3.1",
     "electron-builder": "^3.17.1",
     "electron-prebuilt": "^0.36.0",
     "jasmine-core": "^2.3.4",
@@ -17,7 +16,8 @@
     "protractor-console": "^2.0.1"
   },
   "scripts": {
-    "postinstall": "cd app; npm install; cd ..; bower install; install-app-deps",
+    "preinstall": "cd app && npm install && bower install",
+    "postinstall": "install-app-deps",
     "pack": "build",
     "dist": "build",
     "prestart": "npm install",
