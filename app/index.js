@@ -1,8 +1,14 @@
 'use strict';
 
 const electron = require('electron')
-const app = electron.app;  // Module to control application life.
-const BrowserWindow = electron.BrowserWindow;  // Module to create native browser window.
+const app = electron.app;
+const ipcMain = electron.ipcMain;
+const BrowserWindow = electron.BrowserWindow;
+const path = require('path');
+
+ipcMain.on('getModulesDir', function(event) {
+    event.returnValue = path.resolve(__dirname, 'node_modules');
+});
 
 // Report crashes to our server.
 //require('crash-reporter').start();

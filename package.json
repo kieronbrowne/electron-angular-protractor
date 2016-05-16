@@ -10,7 +10,7 @@
   "main": "app/index.js",
   "devDependencies": {
     "electron-builder": "^3.17.1",
-    "electron-prebuilt": "^0.36.0",
+    "electron-prebuilt": "^1.0.0",
     "jasmine-core": "^2.3.4",
     "protractor": "^3.0.0",
     "protractor-console": "^2.0.1"

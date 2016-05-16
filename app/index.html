@@ -10,6 +10,9 @@
     
     <script>
         window.nodeRequire = require;
+        var ipcRenderer = require('electron').ipcRenderer;
+        var appModulesDir = ipcRenderer.sendSync('getModulesDir');
+        require('module').globalPaths.push(appModulesDir);
         delete window.require;
         delete window.exports;
         delete window.module;
